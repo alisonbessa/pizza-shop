@@ -22,7 +22,7 @@ export function MonthRevenueCard() {
         {monthRevenue && (
           <>
             <span className="text-2xl font-bold tracking-tight">
-              {monthRevenue.receipt.toLocaleString('pt-BR', {
+              {(monthRevenue.receipt / 100).toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}
@@ -34,7 +34,7 @@ export function MonthRevenueCard() {
                 </span>
               ) : (
                 <span className="text-rose-500 dark:text-rose-400">
-                  -{monthRevenue.diffFromLastMonth}%
+                  {monthRevenue.diffFromLastMonth}%
                 </span>
               )}{' '}
               em relação ao mês passado
